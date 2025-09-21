@@ -15,17 +15,17 @@ public class Usuario {
     public Usuario() {}
 
     // Construtor completo
-    public Usuario(int id, String nome, String cpf, String email, String login, String senhaHash, String perfil, Integer equipeId) {
-        this.id = id;
-        this.nome = nome;
-        this.cpf = cpf;
-        this.email = email;
-        this.login = login;
-        this.senhaHash = senhaHash;
-        this.perfil = perfil;
-        this.cargo = cargo;
-        this.equipeId = equipeId;
-    }
+    public Usuario(int id, String nome, String cpf, String email, String login, String senhaHash, String perfil, String cargo, Integer equipeId) {
+    this.id = id;
+    this.nome = nome;
+    this.cpf = cpf;
+    this.email = email;
+    this.login = login;
+    this.senhaHash = senhaHash;
+    this.perfil = perfil;
+    this.cargo = cargo;
+    this.equipeId = equipeId;
+}
 
     // Getters e Setters
     public int getId() { return id; }
