@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="511.0" prefWidth="554.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label fx:id="BoasvindasInicio" alignment="CENTER" layoutX="70.0" layoutY="52.0" prefHeight="46.0" prefWidth="270.0" text="Bem-vindo, admin/nome" textFill="#137da1">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Label>
+      <GridPane layoutX="86.0" layoutY="171.0" prefHeight="150.0" prefWidth="360.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="219.0" minWidth="10.0" prefWidth="210.20001220703125" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="185.4000244140625" minWidth="10.0" prefWidth="147.79998779296875" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Button fx:id="BotaoUsuario" mnemonicParsing="false" prefHeight="34.0" prefWidth="123.0" text="Usuários" />
+            <Button fx:id="BotaoProjetos" mnemonicParsing="false" prefHeight="34.0" prefWidth="124.0" text="Projetos" GridPane.rowIndex="1" />
+            <Button fx:id="BotaoEquipes" mnemonicParsing="false" prefHeight="35.0" prefWidth="123.0" text="Equipes" GridPane.rowIndex="2" />
+            <Button fx:id="BotaoTarefas" mnemonicParsing="false" prefHeight="34.0" prefWidth="123.0" text="Tarefas" GridPane.columnIndex="1" />
+            <Button fx:id="BotaoRelatorios" mnemonicParsing="false" prefHeight="36.0" prefWidth="123.0" text="Relatórios" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+         </children>
+      </GridPane>
+      <Label fx:id="MsgInicio" alignment="CENTER" layoutX="70.0" layoutY="116.0" prefHeight="26.0" prefWidth="375.0" text="Selecione abaixo o campo que deseja trabalhar:" textFill="#0d0d0d">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
