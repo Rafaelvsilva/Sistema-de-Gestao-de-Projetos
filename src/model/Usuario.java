@@ -8,6 +8,7 @@ public class Usuario {
     private String login;
     private String senhaHash;
     private String perfil; // ADMIN, GERENTE, COLABORADOR
+    private String cargo;
     private Integer equipeId;
 
     // Construtor vazio
@@ -22,6 +23,7 @@ public class Usuario {
         this.login = login;
         this.senhaHash = senhaHash;
         this.perfil = perfil;
+        this.cargo = cargo;
         this.equipeId = equipeId;
     }
 
@@ -46,6 +48,9 @@ public class Usuario {
 
     public String getPerfil() { return perfil; }
     public void setPerfil(String perfil) { this.perfil = perfil; }
+
+    public String getCargo() {return cargo;}
+    public void setCargo(String cargo) {  this.cargo = cargo;}
 
     public Integer getEquipeId() { return equipeId; }
     public void setEquipeId(Integer equipeId) { this.equipeId = equipeId; }
