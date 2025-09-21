@@ -1,12 +1,12 @@
 package src.dao;
 
-import src.model.Usuario;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import src.model.Usuario;
 
 public class UsuarioDAO {
-    private Connection connection;
+    private final Connection connection;
 
     public UsuarioDAO(Connection connection) {
         this.connection = connection;
