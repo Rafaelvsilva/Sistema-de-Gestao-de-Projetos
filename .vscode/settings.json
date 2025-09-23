@@ -1,9 +1,0 @@
-{
-    "java.project.sourcePaths": [
-        "."
-    ],
-    "java.project.referencedLibraries": [
-        "lib\\mysql-connector-j-9.4.0.jar",
-        "c:\\Users\\COUGAR\\Pictures\\faculdade\\Sistema-de-Gestao-de-Projetos\\lib\\mysql-connector-j-9.4.0.jar"
-    ]
-}
