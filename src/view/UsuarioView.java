@@ -14,7 +14,6 @@ public class UsuarioView {
         this.controller = controller;
     }
 
-    // Menu principal
     public void menu() throws SQLException {
         while (true) {
             System.out.println("\n=== MENU USUÁRIOS ===");
@@ -41,15 +40,14 @@ public class UsuarioView {
         }
     }
 
-    // Inserir usuário
     private void inserirUsuario() throws SQLException {
-        System.out.print("Nome: "); String nome = sc.nextLine().trim();
-        System.out.print("CPF: "); String cpf = sc.nextLine().trim();
-        System.out.print("Email: "); String email = sc.nextLine().trim();
-        System.out.print("Login: "); String login = sc.nextLine().trim();
-        System.out.print("Senha: "); String senha = sc.nextLine().trim();
-        System.out.print("Perfil: "); String perfil = sc.nextLine().trim();
-        System.out.print("Cargo: "); String cargo = sc.nextLine().trim();
+        System.out.print("Nome: "); String nome = sc.nextLine();
+        System.out.print("CPF: "); String cpf = sc.nextLine();
+        System.out.print("Email: "); String email = sc.nextLine();
+        System.out.print("Login: "); String login = sc.nextLine();
+        System.out.print("Senha: "); String senha = sc.nextLine();
+        System.out.print("Perfil: "); String perfil = sc.nextLine();
+        System.out.print("Cargo: "); String cargo = sc.nextLine();
         System.out.print("EquipeId: "); int equipeId = sc.nextInt(); sc.nextLine();
 
         Usuario usuario = new Usuario(0, nome, cpf, email, login, senha, perfil, cargo, equipeId);
@@ -57,7 +55,6 @@ public class UsuarioView {
         System.out.println("Usuário adicionado com sucesso!");
     }
 
-    // Listar usuários
     private void listarUsuarios() throws SQLException {
         List<Usuario> usuarios = controller.listarUsuarios();
         System.out.println("\n=== LISTA DE USUÁRIOS ===");
@@ -66,11 +63,9 @@ public class UsuarioView {
         }
     }
 
-    // Atualizar usuário
     private void atualizarUsuario() throws SQLException {
         System.out.print("Informe o ID do usuário que deseja atualizar: ");
-        int id = sc.nextInt(); 
-        sc.nextLine(); // limpar buffer
+        int id = sc.nextInt(); sc.nextLine();
 
         Usuario usuario = controller.buscarUsuario(id);
         if (usuario == null) {
@@ -78,49 +73,34 @@ public class UsuarioView {
             return;
         }
 
-        System.out.print("Nome (" + usuario.getNome() + "): "); 
-        String nome = sc.nextLine().trim();
+        System.out.print("Nome (" + usuario.getNome() + "): "); String nome = sc.nextLine();
         if (!nome.isEmpty()) usuario.setNome(nome);
 
-        System.out.print("CPF (" + usuario.getCpf() + "): "); 
-        String cpf = sc.nextLine().trim();
+        System.out.print("CPF (" + usuario.getCpf() + "): "); String cpf = sc.nextLine();
         if (!cpf.isEmpty()) usuario.setCpf(cpf);
 
-        System.out.print("Email (" + usuario.getEmail() + "): "); 
-        String email = sc.nextLine().trim();
+        System.out.print("Email (" + usuario.getEmail() + "): "); String email = sc.nextLine();
         if (!email.isEmpty()) usuario.setEmail(email);
 
-        System.out.print("Login (" + usuario.getLogin() + "): "); 
-        String login = sc.nextLine().trim();
+        System.out.print("Login (" + usuario.getLogin() + "): "); String login = sc.nextLine();
         if (!login.isEmpty()) usuario.setLogin(login);
 
-        System.out.print("Senha (" + usuario.getSenhaHash() + "): "); 
-        String senha = sc.nextLine().trim();
+        System.out.print("Senha (" + usuario.getSenhaHash() + "): "); String senha = sc.nextLine();
         if (!senha.isEmpty()) usuario.setSenhaHash(senha);
 
-        System.out.print("Perfil (" + usuario.getPerfil() + "): "); 
-        String perfil = sc.nextLine().trim();
+        System.out.print("Perfil (" + usuario.getPerfil() + "): "); String perfil = sc.nextLine();
         if (!perfil.isEmpty()) usuario.setPerfil(perfil);
 
-        System.out.print("Cargo (" + usuario.getCargo() + "): "); 
-        String cargo = sc.nextLine().trim();
+        System.out.print("Cargo (" + usuario.getCargo() + "): "); String cargo = sc.nextLine();
         if (!cargo.isEmpty()) usuario.setCargo(cargo);
 
-        System.out.print("EquipeId (" + usuario.getEquipeId() + "): "); 
-        String inputEquipe = sc.nextLine().trim(); // variável temporária segura
-        if (!inputEquipe.isEmpty()) {
-            try {
-                usuario.setEquipeId(Integer.parseInt(inputEquipe));
-            } catch (NumberFormatException e) {
-                System.out.println("Valor inválido para EquipeId. Mantendo o valor anterior.");
-            }
-        }
+        System.out.print("EquipeId (" + usuario.getEquipeId() + "): "); String eq = sc.nextLine();
+        if (!eq.isEmpty()) usuario.setEquipeId(Integer.parseInt(eq));
 
         controller.atualizarUsuario(usuario);
         System.out.println("Usuário atualizado com sucesso!");
     }
 
-    // Deletar usuário
     private void deletarUsuario() throws SQLException {
         System.out.print("Informe o ID do usuário que deseja deletar: ");
         int id = sc.nextInt(); sc.nextLine();
