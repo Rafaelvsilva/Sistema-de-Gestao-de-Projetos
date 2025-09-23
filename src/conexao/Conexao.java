@@ -6,21 +6,20 @@ import java.sql.SQLException;
 
 public class Conexao {
 
-    // Método que cria e retorna a conexão com o banco
+    
     public static Connection conectar() {
-        String url = "jdbc:mysql://localhost:3306/nomeDoBanco"; // troque pelo nome do seu banco
-        String usuario = "seuUsuario"; // troque pelo login do banco
-        String senha = "suaSenha";     // troque pela senha do banco
+        String url = "jdbc:mysql://127.0.0.1:3306/sistema_gestao?useSSL=false&serverTimezone=UTC";
+        String usuario = "seuUsuario";
+        String senha = "suaSenha";
 
         try {
             return DriverManager.getConnection(url, usuario, senha);
         } catch (SQLException e) {
-            // Aqui não imprime nada no console
             return null;
         }
     }
 
-    // Teste rápido da conexão
+    
     public static void main(String[] args) {
         Connection conexao = conectar();
         if (conexao != null) {
